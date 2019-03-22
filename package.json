@@ -1,0 +1,18 @@
+{
+  "name": "retryp",
+  "version": "0.0.0",
+  "description": "provide a promise retry utility",
+  "main": "./dist/retryp.js",
+  "scripts": {
+    "prepublish": "yarn build",
+    "build": "./node_modules/.bin/babel src --out-dir dist --copy-files",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chiachun0920@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.4.2"
+  }
+}
