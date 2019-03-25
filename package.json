@@ -1,6 +1,6 @@
 {
   "name": "retryp",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "provide a promise retry utility",
   "main": "./dist/retryp.js",
   "scripts": {
