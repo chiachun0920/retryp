@@ -8,6 +8,19 @@
     "build": "./node_modules/.bin/babel src --out-dir dist --copy-files",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bugs": {
+    "url": "https://github.com/chiachun0920/retryp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chiachun0920/retryp.git"
+  },
+  "keywords": [
+    "retry",
+    "promise",
+    "repeat",
+    "replay"
+  ],
   "author": "chiachun0920@gmail.com",
   "license": "ISC",
   "devDependencies": {
