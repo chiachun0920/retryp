@@ -1,6 +1,11 @@
 import to from './to';
 
-export const retryp = async (func, options) => {
+const defaultOptions = {
+  limit: 10,
+  interval: 1000
+};
+
+export const retryp = async (func, options = defaultOptions) => {
   const { limit, interval } = options;
   let [ error, response ] = await to(func());
   if (error) {
