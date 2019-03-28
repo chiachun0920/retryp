@@ -18,7 +18,8 @@ The `options` argument is an object.
 
 ## Example
 ```js
-var retryp = require('retryp').retryp;
+import retryp from 'retryp';
+// var retryp = require('retryp').default;
 
 // Simple example
 
