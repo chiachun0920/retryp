@@ -1,11 +1,14 @@
 import to from './to';
+import EfficientTimeout from 'efficient-timeout';
+
+let et = new EfficientTimeout();
 
 const defaultOptions = {
   limit: 10,
   interval: 1000
 };
 
-export const retryp = async (func, options = defaultOptions) => {
+const retryp = async (func, options = defaultOptions) => {
   const { limit, interval } = options;
   let [ error, response ] = await to(func());
   if (error) {
@@ -13,7 +16,7 @@ export const retryp = async (func, options = defaultOptions) => {
       if (limit === 0) {
         return reject('error/retry-limit');
       }
-      setTimeout(async () => {
+      et.setTimeout(async () => {
         let [ error, response ] = await to(retryp(func, { ...options, limit: options.limit - 1 }));
         if (error) {
           return reject(error);
@@ -24,3 +27,5 @@ export const retryp = async (func, options = defaultOptions) => {
   }
   return response;
 };
+
+export default retryp;
