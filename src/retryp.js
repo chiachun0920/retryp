@@ -14,7 +14,7 @@ const retryp = async (func, options = defaultOptions) => {
   if (error) {
     return new Promise((resolve, reject) => {
       if (limit === 0) {
-        return reject('error/retry-limit');
+        return reject(error);
       }
       et.setTimeout(async () => {
         let [ error, response ] = await to(retryp(func, { ...options, limit: options.limit - 1 }));
